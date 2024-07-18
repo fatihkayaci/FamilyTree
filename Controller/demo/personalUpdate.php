@@ -6,11 +6,6 @@ try {
     $lastName = $_POST['lastName'];
     $birthDate = $_POST['birthDate'];
     $deathDate = $_POST['deathDate'];
-    echo $personID;
-    echo $firstName;
-    echo $lastName;
-    echo $birthDate;
-    echo $deathDate;
 
     $sql = "UPDATE tbl_personal
     SET firstName = :firstName,

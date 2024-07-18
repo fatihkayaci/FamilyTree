@@ -96,4 +96,28 @@ $('#editPerson').click(function() {
 });
 
 
+$('#relationshipSave').click(function() {
+    var personID = $('input[name="rightClickPersonID"]').val();
+    var parentNo = $('input[name="parentNo"]').val();
+    var wifeNo = $('input[name="wifeNo"]').val();
+    console.log(personID+ parentNo+ wifeNo);
+    $.ajax({
+        url: './Controller/relationshipSave.php',
+        type: 'POST',
+        data: {
+            personID: personID,
+            parentNo: parentNo,
+            wifeNo: wifeNo
+        },
+        success: function(response) {
+            console.log(response);
+            // location.reload();
+        },
+        error: function(error) {
+            console.error("AJAX hatası: ", error);
+        }
+    });
+});
+
+
    
